@@ -25,12 +25,11 @@ class Solution:
         def cmp(p):
             v = getVector(base,p)
             c = 1 if v[0]<0 else 0
-            size = getSize(v)
             uv = getNorm(v)
             cp = crossProduct((1,0),uv)
             if v[0]<0:
                 cp = 2-cp
-            return (cp,size)
+            return cp
            
         trees.sort(key=cmp)
         # print(trees)
