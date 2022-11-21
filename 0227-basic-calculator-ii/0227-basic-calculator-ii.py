@@ -63,7 +63,7 @@ class Solution:
                 n = 0
             else:
                 n = n*10 + int(c)
-        print(st,n,op,sign)
+        # print(st,n,op,sign)
         if op == '*':
             t = st.pop()*n*sign
             st[-1] += t
