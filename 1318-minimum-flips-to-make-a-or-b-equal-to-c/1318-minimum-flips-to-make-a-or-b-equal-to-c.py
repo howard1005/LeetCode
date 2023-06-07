@@ -5,8 +5,7 @@ class Solution:
         while a or b or c:
             
             if (c&1):
-                if (a&1)|(b&1) == 0:
-                    ans += 1
+                ans += ((a&1)|(b&1))^1
             else:
                 ans += (a&1)+(b&1)
                 
