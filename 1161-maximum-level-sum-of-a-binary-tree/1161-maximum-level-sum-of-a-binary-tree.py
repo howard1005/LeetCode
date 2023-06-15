@@ -20,7 +20,4 @@ class Solution:
                 dfs(node.right,level+1)
         dfs(root,1)
         
-        l = [(cum,-level) for level,cum in d.items()]
-        l.sort()
-        
-        return -l[-1][1]
+        return -max([(cum,-level) for level,cum in d.items()])[1]
