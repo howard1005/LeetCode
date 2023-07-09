@@ -2,9 +2,11 @@ class Solution:
     def largestVariance(self, s: str) -> int:
         ans = 0
         
-        for i in range(26):
-            for j in range(i+1,26):
-                c1,c2 = chr(i+ord('a')),chr(j+ord('a'))
+        sd = list(set(s))
+        
+        for i in range(len(sd)):
+            for j in range(i+1,len(sd)):
+                c1,c2 = sd[i],sd[j]
                 
                 ss = filter(lambda x: x in [c1,c2], s)
                 # print(c1,c2)
