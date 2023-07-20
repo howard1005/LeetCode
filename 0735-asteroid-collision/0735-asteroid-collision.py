@@ -5,40 +5,23 @@ class LL:
         self.n = n
 
 class Solution:
-    def asteroidCollision(self, asteroids: List[int]) -> List[int]:
-        ans = []
+    def asteroidCollision(self, asteroids: List[int]) -> List[int]:       
+        st = []
         
-        h = LL(0)
-        p = h
-        for v in asteroids:
-            n = LL(v,p)
-            p.n = n
-            p = n
-        
-        def remove(node):
-            node.p.n = node.n
-            if node.n:
-                node.n.p = node.p
+        i = 0
+        while i < len(asteroids):
+            n = asteroids[i]
             
-        node = h.n
-        while node.n:
-            v1,v2 = node.v,node.n.v
-            if v1 > 0 and v2 < 0:
-                if abs(v1) > abs(v2):
-                    remove(node.n)
-                elif abs(v1) < abs(v2):
-                    remove(node)
-                    node = node.p
+            if st and st[-1] > 0 and n < 0:
+                if abs(st[-1]) < abs(n):
+                    st.pop()
+                elif abs(st[-1]) > abs(n):
+                    i += 1
                 else:
-                    remove(node)
-                    remove(node.n)
-                    node = node.p
+                    st.pop()
+                    i += 1
             else:
-                node = node.n
-        
-        node = h.n
-        while node:
-            ans.append(node.v)
-            node = node.n 
-        
-        return ans
+                st.append(n)
+                i += 1
+
+        return st
