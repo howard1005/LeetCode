@@ -4,6 +4,8 @@ class Solution:
         
         dp = [[-1 for _ in range(len(s))] for _ in range(len(s))]
         
+        
+        # 첫번째인 i는 이미 print한거라고 잡은거임
         def dfs(i,j):
             if i>=j:
                 return 0
@@ -19,10 +21,17 @@ class Solution:
                 if s[k] == c:
                     dp[i][j] = min(dp[i][j],dfs(i,k-1)+dfs(k,j))
             
+            
+            
             return dp[i][j]
+        
+    
         
         ans = dfs(0,len(s)-1)+1 
 
+        # for r in dp:
+        #     print(r)
+        
         return ans
         
         
