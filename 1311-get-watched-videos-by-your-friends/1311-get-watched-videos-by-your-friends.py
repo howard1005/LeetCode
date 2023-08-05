@@ -7,7 +7,7 @@ class Solution:
         while dq:
             lv,cur = dq.popleft()
             for ncur in friends[cur]:
-                if d[ncur] > lv + 1:
+                if ncur not in d:
                     d[ncur] = lv + 1
                     dq.append((lv+1,ncur))
                     
