@@ -29,29 +29,24 @@ class Solution:
         def mst(skip,choice):
             clear()
             cost = 0
-            d = set()
             if choice != -1:
                 a,b,c = edges[choice]
                 union(a,b)
                 cost += c
-                d.add(choice)
             for i,a,b,c in l:
                 if choice == i or skip == i or isUnion(a,b):
                     continue
                 union(a,b)
                 cost += c
-                d.add(i)
-            return cost,d
+            return cost
         
-        mn,pool = mst(-1,-1)
-        
+        mn = mst(-1,-1)
+        pool = set()
         option = set()
         for i,_,_,_ in l:
-            c,d = mst(-1,i)
-            if c == mn:
+            if mst(-1,i) == mn:
                 pool.add(i)
-            c,d = mst(i,-1)
-            if c == mn:
+            if mst(i,-1) == mn:
                 option.add(i)
         
         return [pool-option,pool&option]
