@@ -7,7 +7,6 @@ class Solution:
         dp = {}
         
         def dfs(n,k):
-            print(n,k)
             if d[n]:
                 return True
             
