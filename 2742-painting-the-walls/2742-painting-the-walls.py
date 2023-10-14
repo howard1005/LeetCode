@@ -3,7 +3,7 @@ class Solution:
         dp = [[-1 for _ in range(len(cost)*2+1)] for _ in range(len(cost))]
         
         def dfs(i,fw):
-            if fw == -len(cost):
+            if fw == -len(cost)+i:
                 return 0
             if i >= len(cost):
                 return 0 if fw <= 0 else inf
