@@ -10,6 +10,13 @@ class Solution:
         
         s,e = 0,len(nums)-1
         
+        def top():
+            while hq and (hq[0][1] < s or e < hq[0][1]):
+                heappop(hq)
+            if hq:
+                return hq[0]
+            return None
+        
         def valid(i,j):
             nonlocal s,e
             if i<=j and i<=k and k<=j:
@@ -30,15 +37,12 @@ class Solution:
             return False
         
         while hq:
-            t = hq[0][0]
+            t = top()[0]
             ans = max(ans,t*(e-s+1))
             
             tl = []
-            while hq and hq[0][0] == t:
-                if hq[0][1] < s or e < hq[0][1]:
-                    heappop(hq)
-                else:
-                    tl.append(heappop(hq)[1])
+            while top() and top()[0] == t:
+                tl.append(heappop(hq)[1])
                     
             if div(tl) == False:
                 break
