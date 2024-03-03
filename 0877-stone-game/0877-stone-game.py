@@ -24,4 +24,4 @@ class Solution:
         
         print(dp)
         
-        return dp[0][-1]
+        return True
