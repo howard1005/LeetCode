@@ -25,7 +25,7 @@ class Solution:
             for a in range(j,min(n,j+k*2)):
                 cum += piles[a]
                 kk += 1 
-                _ret = dfs(i+1,a+1,max(k,kk))
+                _ret = dfs(i^1,a+1,max(k,kk))
                 if (ret[w],-ret[w^1]) <= (_ret[w] + cum,-_ret[w^1]):
                     ret[w] = _ret[w] + cum
                     ret[w^1] = _ret[w^1]            
