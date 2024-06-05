@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/find-common-characters">1002. Find Common Characters</a></h2><h3>Easy</h3><hr><p>Given a string array <code>words</code>, return <em>an array of all characters that show up in all strings within the </em><code>words</code><em> (including duplicates)</em>. You may return the answer in <strong>any order</strong>.</p>
+<h2><a href="https://leetcode.com/problems/find-common-characters/?envType=daily-question&envId=2024-06-05">1002. Find Common Characters</a></h2><h3>Easy</h3><hr><p>Given a string array <code>words</code>, return <em>an array of all characters that show up in all strings within the </em><code>words</code><em> (including duplicates)</em>. You may return the answer in <strong>any order</strong>.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
