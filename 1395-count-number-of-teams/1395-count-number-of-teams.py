@@ -4,19 +4,14 @@ class Solution:
 
         l1 = [0 for _ in range(len(rating))]
         l2 = [0 for _ in range(len(rating))]
-
-        for i in range(len(rating)):
-            for j in range(i):
-                if rating[j] < rating[i]:
-                    l1[i] += 1
-                if rating[j] > rating[i]:
-                    l2[i] += 1
         
         for i in range(len(rating)):
             for j in range(i):
                 if rating[j] < rating[i]:
+                    l1[i] += 1
                     ans += l1[j]
                 if rating[j] > rating[i]:
+                    l2[i] += 1
                     ans += l2[j]
 
         return ans
