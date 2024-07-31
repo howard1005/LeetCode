@@ -8,14 +8,14 @@ class Solution:
         for i in range(len(books)-2,-1,-1):
             x = 0
             y = 0
-            j = i
-            while j<len(books) and x<shelfWidth:
+            for j in range(i,len(books)):
                 w,h = books[j]
                 x += w
                 y = max(y,h)
                 if x <= shelfWidth:
                     dp[i] = min(dp[i],y+(dp[j+1] if j+1<len(books) else 0))
-                j += 1
+                else:
+                    break
                 
         ans = dp[0]
 
