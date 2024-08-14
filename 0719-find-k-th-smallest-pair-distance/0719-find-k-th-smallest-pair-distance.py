@@ -6,8 +6,8 @@ class Solution:
         d = set()
         nums.sort()
         size = len(nums)
-        if k == size*(size-1)//2:
-            return nums[-1]-nums[0]
+        # if k == size*(size-1)//2:
+        #     return nums[-1]-nums[0]
         
         for n in nums:
             d.add(n)
