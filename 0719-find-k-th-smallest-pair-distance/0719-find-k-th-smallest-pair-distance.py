@@ -5,7 +5,6 @@ class Solution:
 
         d = set()
         nums.sort()
-        print(nums)
         size = len(nums)
         if k == size*(size-1)//2:
             return nums[-1]-nums[0]
