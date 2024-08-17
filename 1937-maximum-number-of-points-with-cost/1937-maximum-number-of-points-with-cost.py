@@ -1,5 +1,6 @@
 class Solution:
     def maxPoints(self, points: List[List[int]]) -> int:
+        # 특정 pivot 을 중심으로 일정 크기의 증감은 좌/우로 피벗을 설정했을때의 순서와 같다 라는 아이디어
 
         r,c = len(points),len(points[0])
 
