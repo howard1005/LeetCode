@@ -1,4 +1,5 @@
 class Solution:
+    uglies = []
     def nthUglyNumber(self, n: int) -> int:
         def ugliesUnder(num):
             l = []
@@ -13,18 +14,11 @@ class Solution:
                         if an*bn*cn>num:break
                         l.append(an*bn*cn)
             return l
-            
-        lo,hi = 1,2123366400
-        while lo<=hi:
-            mi = (lo+hi)//2
-            l = ugliesUnder(mi)
-            if len(l) == n:
-                return max(l)
-            elif len(l) < n:
-                lo = mi+1
-            else:
-                hi = mi-1
 
-        return -1
+        if not self.uglies:
+            self.uglies = ugliesUnder(2123366400)
+            self.uglies.sort()
+
+        return self.uglies[n-1]
                 
             
