@@ -6,6 +6,7 @@ class Solution:
         
         
         # 첫번째인 i는 이미 print한거라고 잡은거임
+        # i번째 문자는 이미출력이 j번째까지 되어 있을때 최소프린트횟수
         def dfs(i,j):
             if i>=j:
                 return 0
@@ -16,7 +17,7 @@ class Solution:
             
             c = s[i]
             
-            dp[i][j] = dfs(i+1,j)+1
+            dp[i][j] = dfs(i+1,j)+1 # i+1 번째 문자를 출력하고 나아간다.(i랑 같으면 넘어가도 되긴하지만 그건 어차피 아래 for문에서 처리가 되는거다.)
             for k in range(i,j+1):
                 if s[k] == c:
                     dp[i][j] = min(dp[i][j],dfs(i,k-1)+dfs(k,j))
