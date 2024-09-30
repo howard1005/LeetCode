@@ -1,5 +1,6 @@
 class Solution:
     def shortestPalindrome(self, s: str) -> str:
+        ## KMP
         if not s:
             return ""
 
