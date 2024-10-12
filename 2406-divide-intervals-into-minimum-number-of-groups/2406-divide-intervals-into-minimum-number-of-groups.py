@@ -6,17 +6,14 @@ class Solution:
         
         intervals.sort()
 
-        idx = 0
         h = []
         
         for s,e in intervals:
-            if h and h[0][0] < s:
-                _,i = heappop(h)
-                heappush(h,(e,i))
+            if h and h[0] < s:
+                heappop(h)
+                heappush(h,e)
             else:
-                i = idx
-                heappush(h,(e,i))
-                idx += 1
+                heappush(h,e)
         
         ans = len(h)
 
