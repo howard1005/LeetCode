@@ -12,11 +12,14 @@ class Solution:
         for c,cnt in d.items():
             heappush(hq,(-ord(c),c,cnt))
 
+        # print(hq)
+
         repeat = 0
         prev = ''
         while hq:
             n,c,cnt = heappop(hq)
             n = -n
+            # print(n,c,cnt)
             if c == prev:
                 repeat += 1
                 if repeat > repeatLimit:
@@ -30,6 +33,7 @@ class Solution:
                     if cnt2-1:
                         heappush(hq,(-n2,c2,cnt2-1))
 
+                    prev = c2
                     repeat = 1
                 else:
                     ans += c
