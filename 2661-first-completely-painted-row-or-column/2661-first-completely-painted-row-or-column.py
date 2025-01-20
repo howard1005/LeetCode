@@ -14,10 +14,10 @@ class Solution:
         for idx,a in enumerate(arr):
             i,j = d[a]
             cntd[('r',i)] += 1
-            if cntd[('r',i)] == m:
+            if cntd[('r',i)] == n:
                 return idx
             cntd[('c',j)] += 1
-            if cntd[('c',j)] == n:
+            if cntd[('c',j)] == m:
                 return idx
         
         return -1
