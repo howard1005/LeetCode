@@ -4,6 +4,7 @@ class Solution:
         def is_ca(j):
             return True if j+1<len(p) and p[j+1] == '*' else False
 
+        @cache
         def dfs(i,j):
             if i >= len(s) and j >= len(p):
                 return True
