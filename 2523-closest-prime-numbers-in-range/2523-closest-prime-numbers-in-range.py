@@ -1,19 +1,19 @@
 class Solution:
     ps = []
     def closestPrimes(self, left: int, right: int) -> List[int]:
+        if not self.ps:
+            n = 1000000
+            sd = set(range(3,n+1,2))
+            sd.add(2)
+            i = 3
+            while i*i <= n:
+                if i in sd:
+                    sd -= set(range(i*2,n+1,i))
+                i += 2
+            self.ps = list(sd)
+            self.ps.sort()
+
         ps = self.ps
-        if not ps:
-            def isP(n):
-                i = 2
-                while i*i <= n:
-                    if n%i == 0:
-                        return False
-                    i += 1
-                return True
-            ps.append(2)
-            for i in range(3,1000001,2):
-                if isP(i):
-                    ps.append(i)
 
         ans = [inf,inf,inf]
 
