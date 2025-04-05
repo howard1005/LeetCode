@@ -2,13 +2,13 @@ class Solution:
     def subsetXORSum(self, nums: List[int]) -> int:
         ans = 0
 
-        def dfs(i,x):
-            nonlocal ans
+        def dfs(i,t):
             if i == len(nums):
-                ans += x
+                nonlocal ans
+                ans += t
                 return
-            dfs(i+1,x)
-            dfs(i+1,x^nums[i])
+            dfs(i+1,t)
+            dfs(i+1,t^nums[i])
         dfs(0,0)
 
         return ans
