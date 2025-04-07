@@ -20,6 +20,9 @@ class Solution:
             if dp[i][n] == 0:
                 dp[i][n] |= dfs(i+1,n-nums[i])
             return dp[i][n]
-        return dfs(0,target)
+
+        ans = dfs(0,target)
+        
+        return True if ans else False
             
         
