@@ -1,21 +1,19 @@
 class Solution:
     def countSubarrays(self, nums: List[int], minK: int, maxK: int) -> int:
         ans = 0
-        
-        wi = -1
-        mni = -1
-        mxi = -1
-        
-        for i in range(len(nums)):
-            n = nums[i]
-            if n < minK or maxK < n:
-                wi = i
+
+        oi,mni,mxi = -1,-1,-1
+
+        for i,n in enumerate(nums):
             if n == minK:
                 mni = i
             if n == maxK:
                 mxi = i
-            r = min(mni,mxi)-wi
-            if r > 0:
-                ans += r
-        
+            if n<minK or n>maxK:
+                oi = i
+            
+            if mni!=-1 and mxi!=-1 and oi<mni and oi<mxi:
+                j = min(mni,mxi)
+                ans += j-oi
+
         return ans
