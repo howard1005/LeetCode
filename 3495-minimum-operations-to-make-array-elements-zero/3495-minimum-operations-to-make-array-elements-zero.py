@@ -7,8 +7,10 @@ class Solution:
             for i in range(16):
                 c = 1<<(i*2)
                 d = (c<<2)-1
-                
-                
+
+                if b < c:
+                    break
+                    
                 e,f = max(a,c),min(b,d)
 
                 if e > f:
