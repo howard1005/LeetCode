@@ -25,17 +25,19 @@ class Solution:
             h = heightMap[i][0]
             vis.add((i,0))
             heappush(hq,(h,i,0))
-            h = heightMap[i][n-1]
-            vis.add((i,n-1))
-            heappush(hq,(h,i,n-1))
+            if n > 1:
+                h = heightMap[i][n-1]
+                vis.add((i,n-1))
+                heappush(hq,(h,i,n-1))
 
         for j in range(1,n-1):
             h = heightMap[0][j]
             vis.add((0,j))
             heappush(hq,(h,0,j))
-            h = heightMap[m-1][j]
-            vis.add((m-1,j))
-            heappush(hq,(h,m-1,j))
+            if m > 1:
+                h = heightMap[m-1][j]
+                vis.add((m-1,j))
+                heappush(hq,(h,m-1,j))
 
         cnt = 0
         ucnt = 0
