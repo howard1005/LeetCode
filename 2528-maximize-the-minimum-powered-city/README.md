@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/maximize-the-minimum-powered-city/">2528. Maximize the Minimum Powered City</a></h2><h3>Hard</h3><hr><div><p>You are given a <strong>0-indexed</strong> integer array <code>stations</code> of length <code>n</code>, where <code>stations[i]</code> represents the number of power stations in the <code>i<sup>th</sup></code> city.</p>
+<h2><a href="https://leetcode.com/problems/maximize-the-minimum-powered-city">2528. Maximize the Minimum Powered City</a></h2><h3>Hard</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>stations</code> of length <code>n</code>, where <code>stations[i]</code> represents the number of power stations in the <code>i<sup>th</sup></code> city.</p>
 
 <p>Each power station can provide power to every city in a fixed <strong>range</strong>. In other words, if the range is denoted by <code>r</code>, then a power station at city <code>i</code> can provide power to all cities <code>j</code> such that <code>|i - j| &lt;= r</code> and <code>0 &lt;= i, j &lt;= n - 1</code>.</p>
 
@@ -17,7 +17,8 @@
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
-<pre><strong>Input:</strong> stations = [1,2,4,5,0], r = 1, k = 2
+<pre>
+<strong>Input:</strong> stations = [1,2,4,5,0], r = 1, k = 2
 <strong>Output:</strong> 5
 <strong>Explanation:</strong> 
 One of the optimal ways is to install both the power stations at city 1. 
@@ -33,7 +34,8 @@ Since it is not possible to obtain a larger power, we return 5.
 
 <p><strong class="example">Example 2:</strong></p>
 
-<pre><strong>Input:</strong> stations = [4,4,4,4], r = 0, k = 3
+<pre>
+<strong>Input:</strong> stations = [4,4,4,4], r = 0, k = 3
 <strong>Output:</strong> 4
 <strong>Explanation:</strong> 
 It can be proved that we cannot make the minimum power of a city greater than 4.
@@ -49,4 +51,3 @@ It can be proved that we cannot make the minimum power of a city greater than 4.
 	<li><code>0 &lt;= r&nbsp;&lt;= n - 1</code></li>
 	<li><code>0 &lt;= k&nbsp;&lt;= 10<sup>9</sup></code></li>
 </ul>
-</div>
