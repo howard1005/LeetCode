@@ -29,8 +29,7 @@ class Robot:
                 
 
     def step(self, num: int) -> None:
-        n = num%self.r
-        self.i = (n+self.i)%self.r
+        self.i = (num+self.i)%self.r
         self.x,self.y,self.di = self.l[self.i]
         
 
