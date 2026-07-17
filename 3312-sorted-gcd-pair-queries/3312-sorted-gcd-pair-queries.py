@@ -14,16 +14,12 @@ class Solution:
         gl = [0 for _ in range(mx+1)]
         
         for g in range(mx,0,-1):
-            multiple_cnt = 0
-
+            m = 0
             for i in range(g, mx + 1, g):
-                multiple_cnt += d[i]
-
-            cnt = multiple_cnt * (multiple_cnt - 1) // 2
-
+                m += d[i]
+            cnt = m * (m - 1) // 2
             for i in range(g * 2, mx + 1, g):
                 cnt -= gl[i]
-
             gl[g] = cnt
         
         # print(gl)
