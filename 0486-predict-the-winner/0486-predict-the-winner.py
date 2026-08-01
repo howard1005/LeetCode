@@ -1,5 +1,5 @@
 class Solution:
-    def PredictTheWinner(self, nums: List[int]) -> bool:
+    def predictTheWinner(self, nums: List[int]) -> bool:
         dp = [[None for _ in range(len(nums))] for _ in range(len(nums))]
         
         def dfs(i,j,k):
