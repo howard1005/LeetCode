@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/stone-game/">877. Stone Game</a></h2><h3>Medium</h3><hr><div><p>Alice and Bob play a game with piles of stones. There are an <strong>even</strong> number of piles arranged in a row, and each pile has a <strong>positive</strong> integer number of stones <code>piles[i]</code>.</p>
+<h2><a href="https://leetcode.com/problems/stone-game/?envType=daily-question&envId=2026-08-02">877. Stone Game</a></h2><h3>Medium</h3><hr><p>Alice and Bob play a game with piles of stones. There are an <strong>even</strong> number of piles arranged in a row, and each pile has a <strong>positive</strong> integer number of stones <code>piles[i]</code>.</p>
 
 <p>The objective of the game is to end with the most stones. The <strong>total</strong> number of stones across all the piles is <strong>odd</strong>, so there are no ties.</p>
 
@@ -9,7 +9,8 @@
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
-<pre><strong>Input:</strong> piles = [5,3,4,5]
+<pre>
+<strong>Input:</strong> piles = [5,3,4,5]
 <strong>Output:</strong> true
 <strong>Explanation:</strong> 
 Alice starts first, and can only take the first 5 or the last 5.
@@ -21,7 +22,8 @@ This demonstrated that taking the first 5 was a winning move for Alice, so we re
 
 <p><strong class="example">Example 2:</strong></p>
 
-<pre><strong>Input:</strong> piles = [3,7,2,3]
+<pre>
+<strong>Input:</strong> piles = [3,7,2,3]
 <strong>Output:</strong> true
 </pre>
 
@@ -34,4 +36,3 @@ This demonstrated that taking the first 5 was a winning move for Alice, so we re
 	<li><code>1 &lt;= piles[i] &lt;= 500</code></li>
 	<li><code>sum(piles[i])</code> is <strong>odd</strong>.</li>
 </ul>
-</div>
