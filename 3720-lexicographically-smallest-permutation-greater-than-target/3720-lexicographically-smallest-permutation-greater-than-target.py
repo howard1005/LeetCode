@@ -2,39 +2,40 @@ class Solution:
     def lexGreaterPermutation(self, s: str, target: str) -> str:
         ans = ''
 
-        count = Counter(s)
-        chars = sorted(count)
-        n = len(target)
+        d = defaultdict(int)
+        for c in s:
+            d[c] += 1
 
-        def remaining():
-            return "".join(ch * count[ch] for ch in chars)
+        l = list(d.keys())
+        l.sort()
 
         def dfs(i):
-            # target과 완전히 같으면 조건 불충족
-            if i == n:
-                return None
+            # print(i)
+            if i == len(s):
+                return ''
 
-            for ch in chars:
-                if count[ch] == 0 or ch < target[i]:
+            t = target[i]
+
+            for c in l:
+                if t > c or d[c] == 0:
                     continue
+                
+                if c > t:
+                    tl = []
+                    d[c] -= 1
+                    for k,v in d.items():
+                        tl.extend([k]*v)
+                    tl.sort()
+                    return c + ''.join(tl)
 
-                count[ch] -= 1
+                d[c] -= 1
+                r = dfs(i+1)
+                d[c] += 1
 
-                if ch > target[i]:
-                    # 이미 커졌으므로 나머지는 오름차순으로 붙임
-                    return ch + remaining()
+                if r:
+                    return c+r
 
-                # ch == target[i]
-                suffix = dfs(i + 1)
-                if suffix is not None:
-                    return ch + suffix
-
-                count[ch] += 1  # 백트래킹
-
-            return None
-
-        if len(s) != len(target):
-            return ""
+            return ''
 
         ans = dfs(0)
 
