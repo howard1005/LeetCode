@@ -11,12 +11,10 @@ class Solution:
         # print(l)
 
         dp = [[0 for _ in range(4)] for _ in range(le)]
-        dpi = [[None for _ in range(4)] for _ in range(le)]
         dpl = [[None for _ in range(4)] for _ in range(le)]
 
         for j in range(4):
             dp[-1][j] = l[-1][2]
-            dpi[-1][j] = (le,l[-1][3])
             dpl[-1][j] = [l[-1][3]]
 
         for i in range(le-2,-1,-1):
@@ -33,11 +31,9 @@ class Solution:
 
                 if r1 < r2 or (r1 == r2 and p2 < p1):
                     dp[i][j] = r2
-                    dpi[i][j] = (k,l[i][3])
                     dpl[i][j] = p2
                 else:
                     dp[i][j] = r1
-                    dpi[i][j] = -1
                     dpl[i][j] = p1
                 
         # for r in dp:
@@ -48,17 +44,7 @@ class Solution:
         #     print(r)
 
         # print()
-        i,j = 0,0
-        while i < le and len(ans) < 4:
-            if dpi[i][j] == -1:
-                i += 1
-            else:
-                a,b = dpi[i][j]
-                # print("select",a,b)
-                i = a
-                j += 1
-                ans.append(b)
 
-        ans.sort()
+        ans = dpl[0][0]
 
         return ans
