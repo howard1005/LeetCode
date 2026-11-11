@@ -3,7 +3,6 @@ class Solution:
         ans = 0
 
         if costBoth < cost1+cost2:
-            mn = min(need1,need2)
             if need1 < need2:
                 ans = need1*costBoth + (need2-need1)*min(cost2,costBoth)
             else:
