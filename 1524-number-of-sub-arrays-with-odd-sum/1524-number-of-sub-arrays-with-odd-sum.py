@@ -1,22 +1,19 @@
 class Solution:
-    def numOfSubarrays(self, arr: List[int]) -> int:
+    def numOfSubarrays(self, arr: list[int]) -> int:
         ans = 0
 
-        MOD = 1000000007
+        MOD = 10**9+7
 
-        d = defaultdict(int)
-
-        l = [0 for _ in range(len(arr))]
-        l[0] = arr[0]
-        for i in range(1,len(arr)):
-            l[i] = l[i-1] + arr[i]
-        
-        for i in range(len(arr)):
-            if l[i]&1:
-                ans = (ans+d[0]+1)%MOD
-                d[1] += 1
+        cum = 0
+        o,e = 0,0
+        for n in arr:
+            cum += n
+            if cum&1:
+                ans += e+1
+                o += 1
             else:
-                ans = (ans+d[1])%MOD
-                d[0] += 1
+                ans += o
+                e += 1
+            ans %= MOD
 
         return ans
